@@ -208,82 +208,140 @@ function EditArtikel(props) {
         )
     } else {
         return (
-            <div id="app">
+            <div className='page-wrapper'>
+                <Nav />
                 <Sidebar />
-                <div id="main">
-                    <header className="mb-3">
-                        <a href="#" className="burger-btn d-block d-xl-none">
-                            <i className="bi bi-justify fs-3" />
-                        </a>
-                    </header>
+                <div className="content-wrapper">
                     <div className="page-heading">
-                        <div className="page-title">
-                            <div className="row">
-                                <div className="col-12 col-md-6 order-md-1 order-last">
-                                    <h3>Update Page</h3>
-                                    <p className="text-subtitle text-muted">A page for user to update</p>
-                                </div>
-                                <div className="col-12 col-md-6 order-md-2 order-first">
-                                    <nav aria-label="breadcrumb" className="breadcrumb-header float-start float-lg-end">
-                                        <ol className="breadcrumb">
-                                            <li className="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
-                                            <li className="breadcrumb-item active" aria-current="page">EditArtikel</li>
-                                        </ol>
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
-                        <section id="input-style">
-                            <div className="row">
-                                <div className="col-md-12">
-                                    <div className="card">
-                                        <div className="card-header d-sm-flex align-items-center justify-content-between">
-                                            <h3 className="">Edit Artikel</h3>
-                                            <NavLink href="/artikel"><button className='btn btn-primary'>Back</button></NavLink>
-                                        </div>
+                        <h1 className="page-title">Basic Form</h1>
+                        <ol className="breadcrumb">
+                            <li className="breadcrumb-item">
+                                <a href="index.html"><i className="la la-home font-20" /></a>
+                            </li>
+                            <li className="breadcrumb-item">Basic Form</li>
+                        </ol>
+                    </div>
+                    <div className="page-content fade-in-up">
+                        <div className="row">
+                            <div className="col-md-12 col-12">
+                                <div className="ibox">
+                                    <div className="ibox-head">
+                                        <div className="ibox-title">Basic form</div>
+                                        <NavLink href="/artikel"><button className='btn btn-primary mr-4'>Back</button></NavLink>
+                                    </div>
+                                    <div className="ibox-body">
                                         <form onSubmit={updateArtikel}>
-                                            <div className="card-body">
-                                                <div className="row">
-                                                    <div className="col-lg-12 col-6">
-                                                        <div className="form-group">
-                                                            <label>Judul Artikel</label>
-                                                            <input type="text" className="form-control mt-3" placeholder="Judul Artikel"
-                                                                id="nama_artikel"
-                                                                name="nama_artikel"
-                                                                onChange={handleInput}
-                                                                value={artikelInput.nama_artikel}
-                                                            />
-                                                            <small className='text-danger'>{error.nama_artikel}</small>
-                                                        </div>
-                                                        <div className="form-group">
-                                                            <label>Isi Artikel</label>
-                                                            <Editor
-                                                                editorState={isiArtikel}
-                                                                toolbarClassName="toolbarClassName"
-                                                                wrapperClassName="wrapperClassName"
-                                                                editorClassName="editorClassName"
-                                                                onEditorStateChange={onEditorStateChange}
-                                                            />
-                                                            <textarea style={{ display: 'none' }} disabled ref={(val) => artikelInput.isi_artikel = val} value={draftToHtml(convertToRaw(isiArtikel.getCurrentContent()))} rows="3" />
-                                                            <small className='text-danger'>{error.isi_artikel}</small>
-                                                        </div>
-                                                        <button
-                                                            type='submit' className='btn btn-primary btn-user btn-block'>
-                                                            Tambah Data
-                                                        </button>
-                                                    </div>
-                                                </div>
+                                            <div className="form-group">
+                                                <label>Judul Artikel</label>
+                                                <input type="text" className="form-control mt-3" placeholder="Judul Artikel"
+                                                    id="nama_artikel"
+                                                    name="nama_artikel"
+                                                    onChange={handleInput}
+                                                    value={artikelInput.nama_artikel}
+                                                />
+                                                <small className='text-danger'>{error.nama_artikel}</small>
                                             </div>
+                                            <div className="form-group">
+                                                <label>Isi Artikel</label>
+                                                <Editor
+                                                    editorState={isiArtikel}
+                                                    toolbarClassName="toolbarClassName"
+                                                    wrapperClassName="wrapperClassName"
+                                                    editorClassName="editorClassName"
+                                                    onEditorStateChange={onEditorStateChange}
+                                                />
+                                                <textarea style={{ display: 'none' }} disabled ref={(val) => artikelInput.isi_artikel = val} value={draftToHtml(convertToRaw(isiArtikel.getCurrentContent()))} rows="3" />
+                                                <small className='text-danger'>{error.isi_artikel}</small>
+                                            </div>
+                                            <button
+                                                type='submit' className='btn btn-primary btn-user btn-block'>
+                                                Tambah Data
+                                            </button>
                                         </form>
                                     </div>
                                 </div>
                             </div>
-                        </section>
-
+                        </div>
                     </div>
-
                 </div>
             </div>
+
+            // <div id="app">
+            //     <Sidebar />
+            //     <div id="main">
+            //         <header className="mb-3">
+            //             <a href="#" className="burger-btn d-block d-xl-none">
+            //                 <i className="bi bi-justify fs-3" />
+            //             </a>
+            //         </header>
+            //         <div className="page-heading">
+            //             <div className="page-title">
+            //                 <div className="row">
+            //                     <div className="col-12 col-md-6 order-md-1 order-last">
+            //                         <h3>Update Page</h3>
+            //                         <p className="text-subtitle text-muted">A page for user to update</p>
+            //                     </div>
+            //                     <div className="col-12 col-md-6 order-md-2 order-first">
+            //                         <nav aria-label="breadcrumb" className="breadcrumb-header float-start float-lg-end">
+            //                             <ol className="breadcrumb">
+            //                                 <li className="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+            //                                 <li className="breadcrumb-item active" aria-current="page">EditArtikel</li>
+            //                             </ol>
+            //                         </nav>
+            //                     </div>
+            //                 </div>
+            //             </div>
+            //             <section id="input-style">
+            //                 <div className="row">
+            //                     <div className="col-md-12">
+            //                         <div className="card">
+            //                             <div className="card-header d-sm-flex align-items-center justify-content-between">
+            //                                 <h3 className="">Edit Artikel</h3>
+            //                                 <NavLink href="/artikel"><button className='btn btn-primary'>Back</button></NavLink>
+            //                             </div>
+            //                             <form onSubmit={updateArtikel}>
+            //                                 <div className="card-body">
+            //                                     <div className="row">
+            //                                         <div className="col-lg-12 col-6">
+            //                                             <div className="form-group">
+            //                                                 <label>Judul Artikel</label>
+            //                                                 <input type="text" className="form-control mt-3" placeholder="Judul Artikel"
+            //                                                     id="nama_artikel"
+            //                                                     name="nama_artikel"
+            //                                                     onChange={handleInput}
+            //                                                     value={artikelInput.nama_artikel}
+            //                                                 />
+            //                                                 <small className='text-danger'>{error.nama_artikel}</small>
+            //                                             </div>
+            //                                             <div className="form-group">
+            //                                                 <label>Isi Artikel</label>
+            //                                                 <Editor
+            //                                                     editorState={isiArtikel}
+            //                                                     toolbarClassName="toolbarClassName"
+            //                                                     wrapperClassName="wrapperClassName"
+            //                                                     editorClassName="editorClassName"
+            //                                                     onEditorStateChange={onEditorStateChange}
+            //                                                 />
+            //                                                 <textarea style={{ display: 'none' }} disabled ref={(val) => artikelInput.isi_artikel = val} value={draftToHtml(convertToRaw(isiArtikel.getCurrentContent()))} rows="3" />
+            //                                                 <small className='text-danger'>{error.isi_artikel}</small>
+            //                                             </div>
+            //                                             <button
+            //                                                 type='submit' className='btn btn-primary btn-user btn-block'>
+            //                                                 Tambah Data
+            //                                             </button>
+            //                                         </div>
+            //                                     </div>
+            //                                 </div>
+            //                             </form>
+            //                         </div>
+            //                     </div>
+            //                 </div>
+            //             </section>
+
+            //         </div>
+
+            //     </div>
+            // </div>
         )
     }
 

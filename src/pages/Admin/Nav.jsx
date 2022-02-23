@@ -5,145 +5,160 @@ import axios from 'axios';
 export default function Nav() {
 
     return (
-        <header className="topbar" data-navbarbg="skin6">
-            <nav className="navbar top-navbar navbar-expand-md">
-                <div className="navbar-header" data-logobg="skin6">
-                    <a className="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i className="ti-menu ti-close" /></a>
-                    <div className="navbar-brand">
-                        <a href="/dashboard">
-                            <b className="logo-icon">
-                                <img src="../assets/images/logo-icon.png" alt="homepage" className="dark-logo" />
-                                <img src="../assets/images/logo-icon.png" alt="homepage" className="light-logo" />
-                            </b>
-                            <span className="logo-text">
-                                <img src="../assets/images/logo-text.png" alt="homepage" className="dark-logo" />
-                                <img src="../assets/images/logo-light-text.png" className="light-logo" alt="homepage" />
-                            </span>
+        <header className="header">
+            <div className="page-brand">
+                <a className="link" href="/dashboard">
+                    <span className="brand">Jonggol</span>
+                    <span className="brand-mini">AKJ</span>
+                </a>
+            </div>
+            <div className="flexbox flex-1">
+                {/* START TOP-LEFT TOOLBAR*/}
+                <ul className="nav navbar-toolbar">
+                    <li>
+                        <a className="nav-link sidebar-toggler js-sidebar-toggler"><i className="ti-menu" /></a>
+                    </li>
+                    <li>
+                        <form className="navbar-search" action="javascript:;">
+                            <div className="rel">
+                                <span className="search-icon"><i className="ti-search" /></span>
+                                <input className="form-control" placeholder="Search here..." />
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+                {/* END TOP-LEFT TOOLBAR*/}
+                {/* START TOP-RIGHT TOOLBAR*/}
+                <ul className="nav navbar-toolbar">
+                    <li className="dropdown dropdown-inbox">
+                        <a className="nav-link dropdown-toggle" data-toggle="dropdown"><i className="fa fa-envelope-o" />
+                            <span className="badge badge-primary envelope-badge">9</span>
                         </a>
-                    </div>
-                    <a className="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i className="ti-more" /></a>
-                </div>
-                <div className="navbar-collapse collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav float-left mr-auto ml-3 pl-1">
-                        <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle pl-md-3 position-relative" href="javascript:void(0)" id="bell" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span><i data-feather="bell" className="svg-icon" /></span>
-                                <span className="badge badge-primary notify-no rounded-circle">5</span>
-                            </a>
-                            <div className="dropdown-menu dropdown-menu-left mailbox animated bounceInDown">
-                                <ul className="list-style-none">
-                                    <li>
-                                        <div className="message-center notifications position-relative">
-                                            <a href="javascript:void(0)" className="message-item d-flex align-items-center border-bottom px-3 py-2">
-                                                <div className="btn btn-danger rounded-circle btn-circle"><i data-feather="airplay" className="text-white" /></div>
-                                                <div className="w-75 d-inline-block v-middle pl-2">
-                                                    <h6 className="message-title mb-0 mt-1">Luanch Admin</h6>
-                                                    <span className="font-12 text-nowrap d-block text-muted">Just see
-                                                        the my new
-                                                        admin!</span>
-                                                    <span className="font-12 text-nowrap d-block text-muted">9:30 AM</span>
-                                                </div>
-                                            </a>
-                                            <a href="javascript:void(0)" className="message-item d-flex align-items-center border-bottom px-3 py-2">
-                                                <span className="btn btn-success text-white rounded-circle btn-circle"><i data-feather="calendar" className="text-white" /></span>
-                                                <div className="w-75 d-inline-block v-middle pl-2">
-                                                    <h6 className="message-title mb-0 mt-1">Event today</h6>
-                                                    <span className="font-12 text-nowrap d-block text-muted text-truncate">Just
-                                                        a reminder that you have event</span>
-                                                    <span className="font-12 text-nowrap d-block text-muted">9:10 AM</span>
-                                                </div>
-                                            </a>
-                                            <a href="javascript:void(0)" className="message-item d-flex align-items-center border-bottom px-3 py-2">
-                                                <span className="btn btn-info rounded-circle btn-circle"><i data-feather="settings" className="text-white" /></span>
-                                                <div className="w-75 d-inline-block v-middle pl-2">
-                                                    <h6 className="message-title mb-0 mt-1">Settings</h6>
-                                                    <span className="font-12 text-nowrap d-block text-muted text-truncate">You
-                                                        can customize this template
-                                                        as you want</span>
-                                                    <span className="font-12 text-nowrap d-block text-muted">9:08 AM</span>
-                                                </div>
-                                            </a>
-                                            <a href="javascript:void(0)" className="message-item d-flex align-items-center border-bottom px-3 py-2">
-                                                <span className="btn btn-primary rounded-circle btn-circle"><i data-feather="box" className="text-white" /></span>
-                                                <div className="w-75 d-inline-block v-middle pl-2">
-                                                    <h6 className="message-title mb-0 mt-1">Pavan kumar</h6> <span className="font-12 text-nowrap d-block text-muted">Just
-                                                        see the my admin!</span>
-                                                    <span className="font-12 text-nowrap d-block text-muted">9:02 AM</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a className="nav-link pt-3 text-center text-dark" href="javascript:void(0);">
-                                            <strong>Check all notifications</strong>
-                                            <i className="fa fa-angle-right" />
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i data-feather="settings" className="svg-icon" />
-                            </a>
-                            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a className="dropdown-item" href="#">Action</a>
-                                <a className="dropdown-item" href="#">Another action</a>
-                                <div className="dropdown-divider" />
-                                <a className="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </li>
-                        <li className="nav-item d-none d-md-block">
-                            <a className="nav-link" href="javascript:void(0)">
-                                <div className="customize-input">
-                                    <select className="custom-select form-control bg-white custom-radius custom-shadow border-0">
-                                        <option selected>EN</option>
-                                        <option value={1}>AB</option>
-                                        <option value={2}>AK</option>
-                                        <option value={3}>BE</option>
-                                    </select>
+                        <ul className="dropdown-menu dropdown-menu-right dropdown-menu-media">
+                            <li className="dropdown-menu-header">
+                                <div>
+                                    <span><strong>9 New</strong> Messages</span>
+                                    <a className="pull-right" href="mailbox.html">view all</a>
                                 </div>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul className="navbar-nav float-right">
-                        <li className="nav-item d-none d-md-block">
-                            <a className="nav-link" href="javascript:void(0)">
-                                <form>
-                                    <div className="customize-input">
-                                        <input className="form-control custom-shadow custom-radius border-0 bg-white" type="search" placeholder="Search" aria-label="Search" />
-                                        <i className="form-control-icon" data-feather="search" />
-                                    </div>
-                                </form>
-                            </a>
-                        </li>
-                        <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="../assets/images/users/profile-pic.jpg" alt="user" className="rounded-circle" width={40} />
-                                <span className="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span className="text-dark">Jason Doe</span> <i data-feather="chevron-down" className="svg-icon" /></span>
-                            </a>
-                            <div className="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-                                <a className="dropdown-item" href="javascript:void(0)"><i data-feather="user" className="svg-icon mr-2 ml-1" />
-                                    My Profile</a>
-                                <a className="dropdown-item" href="javascript:void(0)"><i data-feather="credit-card" className="svg-icon mr-2 ml-1" />
-                                    My Balance</a>
-                                <a className="dropdown-item" href="javascript:void(0)"><i data-feather="mail" className="svg-icon mr-2 ml-1" />
-                                    Inbox</a>
-                                <div className="dropdown-divider" />
-                                <a className="dropdown-item" href="javascript:void(0)"><i data-feather="settings" className="svg-icon mr-2 ml-1" />
-                                    Account Setting</a>
-                                <div className="dropdown-divider" />
-                                <a className="dropdown-item" href="javascript:void(0)"><i data-feather="power" className="svg-icon mr-2 ml-1" />
-                                    Logout</a>
-                                <div className="dropdown-divider" />
-                                <div className="pl-4 p-3"><a href="javascript:void(0)" className="btn btn-sm btn-info">View
-                                    Profile</a></div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+                            </li>
+                            <li className="list-group list-group-divider scroller" data-height="240px" data-color="#71808f">
+                                <div>
+                                    <a className="list-group-item">
+                                        <div className="media">
+                                            <div className="media-img">
+                                                <img src="./assets/img/users/u1.jpg" />
+                                            </div>
+                                            <div className="media-body">
+                                                <div className="font-strong"> </div>Jeanne Gonzalez<small className="text-muted float-right">Just now</small>
+                                                <div className="font-13">Your proposal interested me.</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a className="list-group-item">
+                                        <div className="media">
+                                            <div className="media-img">
+                                                <img src="./assets/img/users/u2.jpg" />
+                                            </div>
+                                            <div className="media-body">
+                                                <div className="font-strong" />Becky Brooks<small className="text-muted float-right">18 mins</small>
+                                                <div className="font-13">Lorem Ipsum is simply.</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a className="list-group-item">
+                                        <div className="media">
+                                            <div className="media-img">
+                                                <img src="./assets/img/users/u3.jpg" />
+                                            </div>
+                                            <div className="media-body">
+                                                <div className="font-strong" />Frank Cruz<small className="text-muted float-right">18 mins</small>
+                                                <div className="font-13">Lorem Ipsum is simply.</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a className="list-group-item">
+                                        <div className="media">
+                                            <div className="media-img">
+                                                <img src="./assets/img/users/u4.jpg" />
+                                            </div>
+                                            <div className="media-body">
+                                                <div className="font-strong" />Rose Pearson<small className="text-muted float-right">3 hrs</small>
+                                                <div className="font-13">Lorem Ipsum is simply.</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li className="dropdown dropdown-notification">
+                        <a className="nav-link dropdown-toggle" data-toggle="dropdown"><i className="fa fa-bell-o rel"><span className="notify-signal" /></i></a>
+                        <ul className="dropdown-menu dropdown-menu-right dropdown-menu-media">
+                            <li className="dropdown-menu-header">
+                                <div>
+                                    <span><strong>5 New</strong> Notifications</span>
+                                    <a className="pull-right" href="javascript:;">view all</a>
+                                </div>
+                            </li>
+                            <li className="list-group list-group-divider scroller" data-height="240px" data-color="#71808f">
+                                <div>
+                                    <a className="list-group-item">
+                                        <div className="media">
+                                            <div className="media-img">
+                                                <span className="badge badge-success badge-big"><i className="fa fa-check" /></span>
+                                            </div>
+                                            <div className="media-body">
+                                                <div className="font-13">4 task compiled</div><small className="text-muted">22 mins</small></div>
+                                        </div>
+                                    </a>
+                                    <a className="list-group-item">
+                                        <div className="media">
+                                            <div className="media-img">
+                                                <span className="badge badge-default badge-big"><i className="fa fa-shopping-basket" /></span>
+                                            </div>
+                                            <div className="media-body">
+                                                <div className="font-13">You have 12 new orders</div><small className="text-muted">40 mins</small></div>
+                                        </div>
+                                    </a>
+                                    <a className="list-group-item">
+                                        <div className="media">
+                                            <div className="media-img">
+                                                <span className="badge badge-danger badge-big"><i className="fa fa-bolt" /></span>
+                                            </div>
+                                            <div className="media-body">
+                                                <div className="font-13">Server #7 rebooted</div><small className="text-muted">2 hrs</small></div>
+                                        </div>
+                                    </a>
+                                    <a className="list-group-item">
+                                        <div className="media">
+                                            <div className="media-img">
+                                                <span className="badge badge-success badge-big"><i className="fa fa-user" /></span>
+                                            </div>
+                                            <div className="media-body">
+                                                <div className="font-13">New user registered</div><small className="text-muted">2 hrs</small></div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li className="dropdown dropdown-user">
+                        <a className="nav-link dropdown-toggle link" data-toggle="dropdown">
+                            <img src="./assets/img/admin-avatar.png" />
+                            <span />Admin<i className="fa fa-angle-down m-l-5" /></a>
+                        <ul className="dropdown-menu dropdown-menu-right">
+                            <a className="dropdown-item" href="profile.html"><i className="fa fa-user" />Profile</a>
+                            <a className="dropdown-item" href="profile.html"><i className="fa fa-cog" />Settings</a>
+                            <a className="dropdown-item" href="javascript:;"><i className="fa fa-support" />Support</a>
+                            <li className="dropdown-divider" />
+                            <a className="dropdown-item" href="login.html"><i className="fa fa-power-off" />Logout</a>
+                        </ul>
+                    </li>
+                </ul>
+                {/* END TOP-RIGHT TOOLBAR*/}
+            </div>
         </header>
+
 
 
     )

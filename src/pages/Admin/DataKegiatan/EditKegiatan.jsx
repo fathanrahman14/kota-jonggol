@@ -81,39 +81,28 @@ export default function TambahArtikel() {
     } else {
 
         return (
-            <div id="app">
+            <div className='page-wrapper'>
+                <Nav />
                 <Sidebar />
-                <div id="main">
-                    <header className="mb-3">
-                        <a href="#" className="burger-btn d-block d-xl-none">
-                            <i className="bi bi-justify fs-3" />
-                        </a>
-                    </header>
+                <div className="content-wrapper">
                     <div className="page-heading">
-                        <div className="page-title">
-                            <div className="row">
-                                <div className="col-12 col-md-6 order-md-1 order-last">
-                                    <h3>Update Page</h3>
-                                    <p className="text-subtitle text-muted">A page for user to update</p>
-                                </div>
-                                <div className="col-12 col-md-6 order-md-2 order-first">
-                                    <nav aria-label="breadcrumb" className="breadcrumb-header float-start float-lg-end">
-                                        <ol className="breadcrumb">
-                                            <li className="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
-                                            <li className="breadcrumb-item active" aria-current="page">EditArtikel</li>
-                                        </ol>
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
-                        <section id="input-style">
-                            <div className="row">
-                                <div className="col-md-12">
-                                    <div className="card">
-                                        <div className="card-header d-sm-flex align-items-center justify-content-between">
-                                            <h3 className="">Edit Artikel</h3>
-                                            <NavLink href="/kegiatan"><button className='btn btn-primary'>Back</button></NavLink>
-                                        </div>
+                        <h1 className="page-title">Basic Form</h1>
+                        <ol className="breadcrumb">
+                            <li className="breadcrumb-item">
+                                <a href="index.html"><i className="la la-home font-20" /></a>
+                            </li>
+                            <li className="breadcrumb-item">Basic Form</li>
+                        </ol>
+                    </div>
+                    <div className="page-content fade-in-up">
+                        <div className="row">
+                            <div className="col-md-12 col-12">
+                                <div className="ibox">
+                                    <div className="ibox-head">
+                                        <div className="ibox-title">Basic form</div>
+                                        <NavLink href="/kegiatan"><button className='btn btn-primary mr-4'>Back</button></NavLink>
+                                    </div>
+                                    <div className="ibox-body">
                                         <form onSubmit={updateKegiatan}>
                                             <div className="card-body">
                                                 <div className="row">
@@ -163,14 +152,14 @@ export default function TambahArtikel() {
                                                                     } else {
                                                                         return (
                                                                             <label>
-                                                                                <input type="radio" name="status" id="status" onChange={handleInput} value="1"/>Sudah Dilaksanakan
+                                                                                <input type="radio" name="status" id="status" onChange={handleInput} value="1" />Sudah Dilaksanakan
                                                                             </label>
                                                                         )
                                                                     }
                                                                 })()}
                                                             </div>
                                                             <div className="radio">
-                                                            {(() => {
+                                                                {(() => {
                                                                     if (kegiatanInput.status === 0) {
                                                                         return (
                                                                             <label>
@@ -180,7 +169,7 @@ export default function TambahArtikel() {
                                                                     } else {
                                                                         return (
                                                                             <label>
-                                                                                <input type="radio" name="status" id="status" onChange={handleInput} value="0"/>Belum Dilaksakan
+                                                                                <input type="radio" name="status" id="status" onChange={handleInput} value="0" />Belum Dilaksakan
                                                                             </label>
                                                                         )
                                                                     }
@@ -199,12 +188,132 @@ export default function TambahArtikel() {
                                     </div>
                                 </div>
                             </div>
-                        </section>
-
+                        </div>
                     </div>
-
                 </div>
             </div>
+
+            // <div id="app">
+            //     <Sidebar />
+            //     <div id="main">
+            //         <header className="mb-3">
+            //             <a href="#" className="burger-btn d-block d-xl-none">
+            //                 <i className="bi bi-justify fs-3" />
+            //             </a>
+            //         </header>
+            //         <div className="page-heading">
+            //             <div className="page-title">
+            //                 <div className="row">
+            //                     <div className="col-12 col-md-6 order-md-1 order-last">
+            //                         <h3>Update Page</h3>
+            //                         <p className="text-subtitle text-muted">A page for user to update</p>
+            //                     </div>
+            //                     <div className="col-12 col-md-6 order-md-2 order-first">
+            //                         <nav aria-label="breadcrumb" className="breadcrumb-header float-start float-lg-end">
+            //                             <ol className="breadcrumb">
+            //                                 <li className="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+            //                                 <li className="breadcrumb-item active" aria-current="page">EditArtikel</li>
+            //                             </ol>
+            //                         </nav>
+            //                     </div>
+            //                 </div>
+            //             </div>
+            //             <section id="input-style">
+            //                 <div className="row">
+            //                     <div className="col-md-12">
+            //                         <div className="card">
+            //                             <div className="card-header d-sm-flex align-items-center justify-content-between">
+            //                                 <h3 className="">Edit Artikel</h3>
+            //                                 <NavLink href="/kegiatan"><button className='btn btn-primary'>Back</button></NavLink>
+            //                             </div>
+            //                             <form onSubmit={updateKegiatan}>
+            //                                 <div className="card-body">
+            //                                     <div className="row">
+            //                                         <div className="col-lg-12 col-6">
+            //                                             <div className="form-group">
+            //                                                 <label>Tanggal</label>
+            //                                                 <input className="form-control" type="date" placeholder="Masukkan Nama Artikel"
+            //                                                     id="tanggal"
+            //                                                     name="tanggal"
+            //                                                     onChange={handleInput}
+            //                                                     value={kegiatanInput.tanggal}
+            //                                                 />
+            //                                                 <small className='text-danger'>{error.tanggal}</small>
+            //                                             </div>
+            //                                             <div className="form-group">
+            //                                                 <label>Kegiatan</label>
+            //                                                 <input className="form-control" type="text" row="3" placeholder='Isi Nama Kegiatan'
+            //                                                     id="kegiatan"
+            //                                                     name="kegiatan"
+            //                                                     onChange={handleInput}
+            //                                                     value={kegiatanInput.kegiatan}
+            //                                                 />
+            //                                                 <small className='text-danger'>{error.kegiatan}</small>
+            //                                             </div>
+            //                                             <div className="form-group">
+            //                                                 <label>Tambahkan Gambar</label>
+            //                                                 <input type="file"
+            //                                                     className='form-control'
+            //                                                     style={{ border: "none" }}
+            //                                                     name="image"
+            //                                                     onChange={handleImage}
+            //                                                 />
+            //                                                 <img className='mt-3 ml-3' style={{ width: 150, height: 100 }} src={"http://localhost:8000/" + kegiatanInput.image} alt="" />
+            //                                                 <small className='text-danger'>{error.image}</small>
+            //                                             </div>
+            //                                             <div className="form-group">
+            //                                                 <label>Keterangan</label>
+            //                                                 <div className="radio">
+            //                                                     {(() => {
+            //                                                         if (kegiatanInput.status === 1) {
+            //                                                             return (
+            //                                                                 <label>
+            //                                                                     <input type="radio" name="status" id="status" onChange={handleInput} value="1" checked />Sudah Dilaksanakan
+            //                                                                 </label>
+            //                                                             )
+            //                                                         } else {
+            //                                                             return (
+            //                                                                 <label>
+            //                                                                     <input type="radio" name="status" id="status" onChange={handleInput} value="1"/>Sudah Dilaksanakan
+            //                                                                 </label>
+            //                                                             )
+            //                                                         }
+            //                                                     })()}
+            //                                                 </div>
+            //                                                 <div className="radio">
+            //                                                 {(() => {
+            //                                                         if (kegiatanInput.status === 0) {
+            //                                                             return (
+            //                                                                 <label>
+            //                                                                     <input type="radio" name="status" id="status" onChange={handleInput} value="0" checked />Belum Dilaksakan
+            //                                                                 </label>
+            //                                                             )
+            //                                                         } else {
+            //                                                             return (
+            //                                                                 <label>
+            //                                                                     <input type="radio" name="status" id="status" onChange={handleInput} value="0"/>Belum Dilaksakan
+            //                                                                 </label>
+            //                                                             )
+            //                                                         }
+            //                                                     })()}
+            //                                                 </div>
+            //                                                 <small className='text-danger'>{error.status}</small>
+            //                                             </div>
+            //                                             <button
+            //                                                 type='submit' className='btn btn-primary btn-user btn-block'>
+            //                                                 Tambah Data
+            //                                             </button>
+            //                                         </div>
+            //                                     </div>
+            //                                 </div>
+            //                             </form>
+            //                         </div>
+            //                     </div>
+            //                 </div>
+            //             </section>
+            //         </div>
+            //     </div>
+            // </div>
         )
     }
 }
