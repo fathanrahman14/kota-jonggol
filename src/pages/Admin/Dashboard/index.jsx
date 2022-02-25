@@ -3,6 +3,7 @@ import axios from 'axios';
 import Footer from '../Footer'
 import Nav from '../Nav'
 import Sidebar from '../Sidebar'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // class Dashboard extends PureComponent {
 
@@ -98,119 +99,6 @@ export default function Dashboard(props) {
 
     return (
         <div className='page-wrapper'>
-            {/* <Sidebar />
-            <div id="main">
-                <header className="mb-3">
-                    <a href="#" className="burger-btn d-block d-xl-none">
-                        <i className="bi bi-justify fs-3" />
-                    </a>
-                </header>
-                <div className="page-heading">
-                    <h3>Profile Desa</h3>
-                </div>
-                <div className="page-content">
-                    <section className="row">
-                        <div className="col-12 col-lg-12">
-                            <div className="row">
-                                <div className="col-6 col-lg-3 col-md-6">
-                                    <div className="card">
-                                        <div className="card-body px-3 py-4-5">
-                                            <div className="row">
-                                                <div className="col-md-4">
-                                                    <div className="stats-icon purple">
-                                                        <i className="iconly-boldShow" />
-                                                    </div>
-                                                </div>
-                                                <div className="col-md-8">
-                                                    <h6 className="text-muted font-semibold">Jumlah Penduduk</h6>
-                                                    <h6 className="font-extrabold mb-0">{jumlahPendudukInput}</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-6 col-lg-3 col-md-6">
-                                    <div className="card">
-                                        <div className="card-body px-3 py-4-5">
-                                            <div className="row">
-                                                <div className="col-md-4">
-                                                    <div className="stats-icon blue">
-                                                        <i className="iconly-boldProfile" />
-                                                    </div>
-                                                </div>
-                                                <div className="col-md-8">
-                                                    <h6 className="text-muted font-semibold">Jumlah Artikel</h6>
-                                                    <h6 className="font-extrabold mb-0">{totalArtikel}</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-6 col-lg-3 col-md-6">
-                                    <div className="card">
-                                        <div className="card-body px-3 py-4-5">
-                                            <div className="row">
-                                                <div className="col-md-4">
-                                                    <div className="stats-icon green">
-                                                        <i className="iconly-boldAdd-User" />
-                                                    </div>
-                                                </div>
-                                                <div className="col-md-8">
-                                                    <h6 className="text-muted font-semibold">Kegiatan Mendatang</h6>
-                                                    <h6 className="font-extrabold mb-0">{totalKegiatanNot}</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-6 col-lg-3 col-md-6">
-                                    <div className="card">
-                                        <div className="card-body px-3 py-4-5">
-                                            <div className="row">
-                                                <div className="col-md-4">
-                                                    <div className="stats-icon red">
-                                                        <i className="iconly-boldBookmark" />
-                                                    </div>
-                                                </div>
-                                                <div className="col-md-8">
-                                                    <h6 className="text-muted font-semibold">Kegiatan Selesai</h6>
-                                                    <h6 className="font-extrabold mb-0">{totalKegiatanDone}</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col-12">
-                                    <div className="card">
-                                        <div className="card-header">
-                                            <h4>Profile Visit</h4>
-                                        </div>
-                                        <div className="card-body">
-                                            <div id="chart-profile-visit" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="col-12">
-                                        <div className="card">
-                                            <div className="card-header">
-                                                <h4>Peta</h4>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="googlemaps">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <Footer />
-                </div>
-            </div> */}
             <Nav />
             <Sidebar />
             <div className="content-wrapper">
@@ -220,8 +108,8 @@ export default function Dashboard(props) {
                         <div className="col-lg-3 col-md-6">
                             <div className="ibox bg-success color-white widget-stat">
                                 <div className="ibox-body">
-                                    <h2 className="m-b-5 font-strong">{jumlahPendudukInput}</h2>
-                                    <div className="m-b-5">Jumlah Penduduk</div><i className="ti-shopping-cart widget-stat-icon" />
+                                    <h2 className="m-b-5 font-strong text-white">{jumlahPendudukInput}</h2>
+                                    <div className="m-b-5">Jumlah Penduduk</div><i className="fa fa-users widget-stat-icon" />
                                     <div><i className="fa fa-level-up m-r-5" /><small>25% higher</small></div>
                                 </div>
                             </div>
@@ -229,8 +117,8 @@ export default function Dashboard(props) {
                         <div className="col-lg-3 col-md-6">
                             <div className="ibox bg-info color-white widget-stat">
                                 <div className="ibox-body">
-                                    <h2 className="m-b-5 font-strong">{totalArtikel}</h2>
-                                    <div className="m-b-5">Jumlah Artikel</div><i className="ti-bar-chart widget-stat-icon" />
+                                    <h2 className="m-b-5 font-strong text-white">{totalArtikel}</h2>
+                                    <div className="m-b-5">Jumlah Artikel</div><i className="fa fa-book widget-stat-icon" />
                                     <div><i className="fa fa-level-up m-r-5" /><small>17% higher</small></div>
                                 </div>
                             </div>
@@ -238,8 +126,8 @@ export default function Dashboard(props) {
                         <div className="col-lg-3 col-md-6">
                             <div className="ibox bg-warning color-white widget-stat">
                                 <div className="ibox-body">
-                                    <h2 className="m-b-5 font-strong">{totalKegiatanNot}</h2>
-                                    <div className="m-b-5">Kegiatan Mendatang</div><i className="fa fa-money widget-stat-icon" />
+                                    <h2 className="m-b-5 font-strong text-white">{totalKegiatanNot}</h2>
+                                    <div className="m-b-5">Kegiatan Mendatang</div><i className="fa fa-calendar-minus-o widget-stat-icon" />
                                     <div><i className="fa fa-level-up m-r-5" /><small>22% higher</small></div>
                                 </div>
                             </div>
@@ -247,8 +135,8 @@ export default function Dashboard(props) {
                         <div className="col-lg-3 col-md-6">
                             <div className="ibox bg-danger color-white widget-stat">
                                 <div className="ibox-body">
-                                    <h2 className="m-b-5 font-strong">{totalKegiatanDone}</h2>
-                                    <div className="m-b-5">Kegiatan Selesai</div><i className="ti-user widget-stat-icon" />
+                                    <h2 className="m-b-5 font-strong text-white">{totalKegiatanDone}</h2>
+                                    <div className="m-b-5">Kegiatan Selesai</div><i className="fa fa-calendar-check-o widget-stat-icon" />
                                     <div><i className="fa fa-level-down m-r-5" /><small>-12% Lower</small></div>
                                 </div>
                             </div>
@@ -325,6 +213,8 @@ export default function Dashboard(props) {
                                 </div>
                                 <div className="ibox-body">
                                     <div id="world-map" style={{ height: 300 }} />
+                                    {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63429.309783856195!2d107.00892233512408!3d-6.479586249988036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69bc0d7468736b%3A0x401576d14fed560!2sJonggol%2C%20Kec.%20Jonggol%2C%20Kabupaten%20Bogor%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1645670452110!5m2!1sid!2sid" width={600} height={450} style={{border: 0}} allowFullScreen loading="lazy" /> */}
+
                                     <table className="table table-striped m-t-20 visitors-table">
                                         <thead>
                                             <tr>
@@ -744,15 +634,15 @@ export default function Dashboard(props) {
                         </a>
                     </div>
                 </div>
-                {/* END PAGE CONTENT*/}
                 <footer className="page-footer">
                     <div className="font-13">2018 © <b>AdminCAST</b> - All rights reserved.</div>
                     <a className="px-4" href="http://themeforest.net/item/adminca-responsive-bootstrap-4-3-angular-4-admin-dashboard-template/20912589" target="_blank">BUY PREMIUM</a>
                     <div className="to-top"><i className="fa fa-angle-double-up" /></div>
                 </footer>
             </div>
-
         </div>
+            
+            
     )
 }
 

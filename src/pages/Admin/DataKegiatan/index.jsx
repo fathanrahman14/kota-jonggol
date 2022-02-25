@@ -141,7 +141,7 @@ class DataKegiatan extends PureComponent {
                         <div className="ibox">
                             <div className="ibox-head">
                                 <div className="ibox-title">Data Table</div>
-                                <NavLink href="/tambahkegiatan"><button className='btn btn-primary mr-4'>Tambah Data</button></NavLink>
+                                <NavLink href="/tambahkegiatan"><button className='btn-primary mr-4'>Tambah Data</button></NavLink>
                             </div>
                             <div className="ibox-body">
                                 <table className="table table-striped table-bordered table-hover" id="example-table" cellSpacing={0} width="100%">
@@ -178,9 +178,9 @@ class DataKegiatan extends PureComponent {
                                                 <td className='text-center'>
                                                     <Link to={`/editkegiatan/${kegiatan.id}`}>
                                                         {/* <Route path='/editartikel/:id' element={<EditArtikel />} id={artikel.id} /> */}
-                                                        <button className="btn btn-success ml-3">Edit</button>
+                                                        <button className="btn-success ml-4">Edit</button>
                                                     </Link>
-                                                    <button className="btn btn-danger ml-3" onClick={(e) => deleteKegiatan(e, kegiatan.id)}>Delete</button>
+                                                    <button className="btn-danger ml-4" onClick={(e) => deleteKegiatan(e, kegiatan.id)}>Delete</button>
                                                 </td>
                                             </tr>
                                         )}

@@ -94,7 +94,7 @@ export default function JumlahPenduduk(props) {
                                         <td>
                                             <Link to={`/editjumlahpenduduk/2`}>
                                                 {/* <Route path='/editartikel/:id' element={<EditArtikel />} id={artikel.id} /> */}
-                                                <button className="btn btn-success ml-3">Edit</button>
+                                                <button className="btn-success ml-4">Edit</button>
                                             </Link>
                                         </td>
                                     </tr>

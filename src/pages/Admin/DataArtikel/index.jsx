@@ -135,16 +135,16 @@ class DataArtikel extends PureComponent {
                         <div className="ibox">
                             <div className="ibox-head">
                                 <div className="ibox-title">Data Table</div>
-                                <NavLink href="/tambahartikel"><button className='btn btn-primary mr-4'>Tambah Data</button></NavLink>
+                                <NavLink href="/tambahartikel"><button className='btn-primary mr-4'>Tambah Data</button></NavLink>
                             </div>
                             <div className="ibox-body">
                                 <table className="table table-striped table-bordered table-hover" id="example-table" cellSpacing={0} width="100%">
                                     <thead>
                                         <tr>
                                             {/* <th>No</th> */}
-                                            <th>Judul Artikel</th>
-                                            <th>Isi Artikel</th>
-                                            <th>Action</th>
+                                            <th className='col-2'>Judul Artikel</th>
+                                            <th className='col-6'>Isi Artikel</th>
+                                            <th className='col-2'>Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -163,9 +163,9 @@ class DataArtikel extends PureComponent {
                                                 <td>
                                                     <Link to={`/editartikel/${artikel.id}`}>
                                                         {/* <Route path='/editartikel/:id' element={<EditArtikel />} id={artikel.id} /> */}
-                                                        <button className="btn btn-success ml-4">Edit</button>
+                                                        <button className="btn-success ml-4">Edit</button>
                                                     </Link>
-                                                    <button className="btn btn-danger ml-4" onClick={(e) => deleteCategory(e, artikel.id)}>Delete</button>
+                                                    <button className="btn-danger ml-4" onClick={(e) => deleteCategory(e, artikel.id)}>Delete</button>
                                                 </td>
                                             </tr>
                                         )}
