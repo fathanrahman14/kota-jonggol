@@ -58,7 +58,7 @@ class home extends Component {
                                                 <nav>
                                                     <ul id="navigation">
                                                         <li><a href="index.html">Beranda</a></li>
-                                                        <li><a href="about.html">Informasi Wilayah</a></li>
+                                                        <li><a href="/informasi">Informasi Wilayah</a></li>
                                                         <li><a href="#">Pages</a>
                                                             <ul className="submenu">
                                                                 <li><a href="blog.html">Blog</a></li>

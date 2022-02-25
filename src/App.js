@@ -5,6 +5,7 @@ import ForgotPassword from './pages/Auth/ForgotPassword';
 import ResetPassword from './pages/Auth/ResetPassword';
 import Dashboard from './pages/Admin/Dashboard/index';
 import Home from './component/home';
+import Informasi from './component/informasi';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 
 import DataArtikel from './pages/Admin/DataArtikel/index';
@@ -21,17 +22,18 @@ import EditKegiatan from './pages/Admin/DataKegiatan/EditKegiatan';
 function App() {
   return (
     <Routes>
-      <Route path="/home" element={ <Home />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/informasi" element={<Informasi />} />
       <Route path="/login" element={<Login />} />
       <Route path="/forgotpassword" element={<ForgotPassword />} />
-      <Route path="/resetpassword/:token" element={<ResetPassword/>} />
+      <Route path="/resetpassword/:token" element={<ResetPassword />} />
       <Route
         path="/dashboard"
         element={
           // <ProtectRoute>
           //   <Dashboard />
           // </ProtectRoute>
-          <Dashboard/>
+          <Dashboard />
         } />
       <Route path='/artikel' element={<DataArtikel />} />
       <Route path='/tambahartikel' element={<TambahArtikel />} />
